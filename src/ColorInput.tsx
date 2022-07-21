@@ -12,7 +12,7 @@ const colorInput = ({name, color, setColor}: colorInputProps) =>
         name={name}
         value={color}
         style={{marginLeft: '5px'}}
-        onChange={({target: {value}}) => setColor(value)} />
+        onChange={({ target: { value } }) => setColor(value)} />
     </div>
 
 export default colorInput;

@@ -1,0 +1,24 @@
+.CVInput {
+  width: 100%;
+  display: flex;
+}
+
+.CVInput input, .CVInput textarea {
+  width: 100%;
+  background-color: var(--background-color);
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  resize: none;
+  transition-property: transform, box-shadow;
+  transition-duration: .5s;
+}
+
+.CVInput input[type = "text"] {
+  text-align: center;
+}
+
+.CVInput input:focus, .CVInput textarea:focus {
+  transform: scale(1.15);
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
+}

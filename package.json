@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mdi/svg": "^6.9.96",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },
