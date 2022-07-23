@@ -63,8 +63,11 @@ function CV() {
                 onClick={() => print()}>
                     <span>Print</span>
                     <img src={printerSVG} alt="printer" />
-                </div>
+                </div>  
             </div>
+                <footer className='websiteOnly'>
+                    <a href="https://github.com/nickslick03/cv-app">Copyright © 2022 nickslick03</a>
+                </footer>
             <style>
                 {
                 `:root {
