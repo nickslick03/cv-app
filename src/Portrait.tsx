@@ -8,7 +8,7 @@ interface PortraitProps {
 const Portrait = ({ portraitSource, setPortraitSource }: PortraitProps) =>
     <div className='Portrait'>
         <img src={portraitSource} alt="portraitImage" />
-        <label tabIndex={0}>
+        <label tabIndex={0} className='websiteOnly'>
         upload portrait
         <input 
         type="file"

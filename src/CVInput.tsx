@@ -17,7 +17,7 @@ type CVInputListProps = Omit<CVInputProps, 'value' | 'setValue'> & {
 
 const CVInput = ({ fontSize, placeholder, value, setValue, isHeader, SVGSource }: CVInputProps) =>
     <div className="CVInput">
-        {SVGSource ? <img src={SVGSource} alt="marker"/> : <></>}
+        {SVGSource ? <img src={SVGSource} alt="marker" /> : <></>}
         <input 
         type='text'
         maxLength={50}
@@ -36,7 +36,7 @@ const CVTextArea = ({ fontSize, placeholder, value, setValue, isHeader, SVGSourc
         {SVGSource ? <img src={SVGSource} alt="marker"/> : <></>}
         <textarea 
         cols={30} 
-        rows={9}
+        rows={10}
         maxLength={300}
         style={{
             color: isHeader ? 'var(--header-color)' : 'var(--text-color)',
@@ -59,7 +59,8 @@ const CVInputList = ({ fontSize, placeholder, valueList, setValueList }: CVInput
             setValue={(newValue: string) => setValueList([...valueList.slice(0, index), newValue, ...valueList.slice(index + 1)])}/>
             <img 
             src={deleteSVG} 
-            alt="delete" 
+            alt="delete"
+            className='websiteOnly'
             onClick={() => setValueList([...valueList.slice(0, index), ...valueList.slice(index + 1)])} />
         </div>)}
     </>

@@ -7,6 +7,7 @@ import emptyProfile from './empty-profile.png';
 import pointSVG from '../node_modules/@mdi/svg/svg/map-marker.svg';
 import phoneSVG from '../node_modules/@mdi/svg/svg/cellphone.svg';
 import mailSVG from '../node_modules/@mdi/svg/svg/email.svg';
+import printerSVG from '../node_modules/@mdi/svg/svg/printer.svg';
 import CVInfoList from './CVInfoList';
 
 function CV() {
@@ -25,7 +26,7 @@ function CV() {
     const [ description, setDescription ] = useState('');
     return (
         <>  
-            <div className='colorContainer'>
+            <div className='colorContainer websiteOnly'>
                 <ColorInput name='background' color={backgroundColor} setColor={setBackgroundColor} />
                 <ColorInput name='header' color={headerColor} setColor={setHeaderColor} />
                 <ColorInput name='text' color={textColor} setColor={setTextColor} />
@@ -55,6 +56,13 @@ function CV() {
                 <div className="education info">
                     <h2>Education</h2>
                     <CVInfoList type='education' />
+                </div>
+                <div 
+                className='button websiteOnly'
+                style={{display: 'flex', alignItems: 'center', gap: '10px'}}
+                onClick={() => print()}>
+                    <span>Print</span>
+                    <img src={printerSVG} alt="printer" />
                 </div>
             </div>
             <style>

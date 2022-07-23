@@ -1,5 +1,5 @@
 .colorContainer {
-    margin: 15px;
+    margin: 20px;
     display: flex;
     gap: 50px;
     flex-wrap: wrap;
@@ -24,4 +24,32 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
+}
+
+@media print {
+    :root {
+        font-size: .8rem;
+    }
+
+    body {
+        background-color: var(--background-color);
+    }
+
+    .CV {
+        box-shadow: none;
+    }
+
+    .websiteOnly {
+        position: absolute;
+        opacity: 0;
+    }
+
+    *:placeholder-shown {
+        position: absolute;
+        opacity: 0;
+    }
+
+    input {
+        overflow-x: visible;
+    }
 }

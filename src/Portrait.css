@@ -14,7 +14,8 @@
     box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.5);
 }
 
-.Portrait label {
+.Portrait label, .button {
+    border: none;
     background-color: lightgray;
     padding: 4px;
     border-radius: 5px;
@@ -22,7 +23,7 @@
     margin: 10px;
 }
 
-.Portrait label:active {
+.Portrait label:active, .button:active {
     background-color: darkgray;
     box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.5) inset;
 }

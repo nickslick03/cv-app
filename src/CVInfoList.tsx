@@ -4,15 +4,15 @@ import xSVG from '../node_modules/@mdi/svg/svg/close.svg';
 import { CVInput, CVInputList } from './CVInput';
 import './CVInfoList.css';
 
-interface CVInputProps {
+interface CVInfoListProps {
     type: 'work' | 'education';
 };
 
-interface CVInputListProps extends CVInputProps {
+interface CVInfoProps extends CVInfoListProps {
     remove: Function,
 };
 
-const CVInfo = ({ type, remove }: CVInputListProps) => {
+const CVInfo = ({ type, remove }: CVInfoProps) => {
 
     const [ title, setTitle ] = useState('');
     const [ institution, setInstitution ] = useState('');
@@ -22,7 +22,7 @@ const CVInfo = ({ type, remove }: CVInputListProps) => {
 
     return (
         <div className="CVInfo">
-            <img src={xSVG} alt="delete" className="topRight" onClick={() => remove()}/>
+            <img src={xSVG} alt="delete" className="topRight websiteOnly" onClick={() => remove()}/>
             <div className="dateContainer">
                 <input type="date" />
                 <div>——</div>
@@ -36,7 +36,7 @@ const CVInfo = ({ type, remove }: CVInputListProps) => {
                 </div>
                 <div className="list">
                     <CVInputList fontSize={1} placeholder='Enter Something...' valueList={infoList} setValueList={setInfoList}/>
-                    <div className='add' onClick={() => setInfoList(infoList.concat(''))} >
+                    <div className='add websiteOnly' onClick={() => setInfoList(infoList.concat(''))} >
                         <img src={plusSVG} alt="plus" /> 
                         <span>
                             Add Bullet Point
@@ -48,24 +48,24 @@ const CVInfo = ({ type, remove }: CVInputListProps) => {
     );
 };
 
-const CVInfoList = ({ type }: CVInputProps) => {
+const CVInfoList = ({ type }: CVInfoListProps) => {
     
     const [ infoList, setInfoList ] = useState([0]);
     
     return (
         <div className="CVInfoList">
-            {infoList.map(num => 
-                <CVInfo 
-                type={type} 
-                key={num} 
-                remove={() => setInfoList(infoList.filter(loopNum => num !== loopNum))}/>
+            {infoList.map((_, index) => 
+                   <CVInfo 
+                type={type}
+                key={'' + index}
+                remove={() => setInfoList(infoList.filter(loopNum => index !== loopNum))}/> 
             )}
-            <div className='add' onClick={() => setInfoList(infoList.concat(infoList.length))}>
-           <img src={plusSVG} alt="plus" /> 
-            <span>
-                Add {type} Listing
-            </span> 
-        </div>
+            <div className='websiteOnly add' onClick={() => setInfoList(infoList.concat(infoList.length))}>
+                <img src={plusSVG} alt="plus" /> 
+                <span>
+                    Add {type} Listing
+                </span> 
+            </div>
         </div>
     );
 };
