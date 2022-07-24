@@ -33,7 +33,7 @@ function CV() {
                 <ColorInput name='secondary' color={secondaryColor} setColor={setSecondaryColor} />
             </div>
             <div className='CV'>
-                <div style={{display: 'flex'}}>
+                <div className='top'>
                     <div className="contact info">
                         <Portrait portraitSource={portraitSource} setPortraitSource={setPortraitSource}/>
                         <CVInput fontSize={1.5} placeholder='Enter Address...' value={address} setValue={setAddress} SVGSource={pointSVG}  />

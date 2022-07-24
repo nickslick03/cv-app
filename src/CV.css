@@ -19,7 +19,11 @@
     gap: 40px;
 }
 
-.info {
+.CV .top {
+    display: flex;
+}
+
+.CV .info {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -42,6 +46,13 @@ footer a {
 
 footer a:hover {
     transform: scale(1.2);
+}
+
+@media (max-width: 800px) {
+    .CV .top {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 @media print {

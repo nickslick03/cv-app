@@ -12,6 +12,8 @@ interface CVInfoProps extends CVInfoListProps {
     remove: Function,
 };
 
+const today = new Date().toISOString().substring(0, 10);
+
 const CVInfo = ({ type, remove }: CVInfoProps) => {
 
     const [ title, setTitle ] = useState('');
@@ -22,13 +24,14 @@ const CVInfo = ({ type, remove }: CVInfoProps) => {
 
     return (
         <div className="CVInfo">
-            <img src={xSVG} alt="delete" className="topRight websiteOnly" onClick={() => remove()}/>
+            
             <div className="dateContainer">
-                <input type="date" />
+                <input type="date" defaultValue={today}/>
                 <div>——</div>
-                <input type="date" />
+                <input type="date" defaultValue={today}/>
             </div>
             <div className="main">
+                <img src={xSVG} alt="delete" className="topRight websiteOnly" onClick={() => remove()}/>
                 <div>
                     <CVInput fontSize={1.4} placeholder={`Enter ${type === 'work' ? 'job title' : 'certification'}...`} value={title} setValue={setTitle} />
                     <CVInput fontSize={1.2} placeholder={`Enter ${type === 'work' ? 'company' : 'school'}...`} value={institution} setValue={setInstitution} />
